@@ -7,7 +7,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const navigation = [
-  { name: "Home", current: true, href: "home" },
+  { name: "Home", current: true, href: "/" },
   { name: "About", current: false, href: "about" },
   { name: "Projects", current: false, href: "projects" },
   { name: "Contact", current: false, href: "contact" },
@@ -23,8 +23,8 @@ export default function Example() {
 
   const handleScrollOrNavigate = (sectionId) => {
     if (location.pathname === "/") {
-      // Already on home page, just scroll
-      const section = document.getElementById(sectionId);
+      // if already on home page, make it return to the top
+      const section = document.getElementById(sectionId);    
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });        
       }
@@ -72,9 +72,10 @@ export default function Example() {
                 className="h-8 w-auto"
               />
             </div>
+
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
-                {navigation.map((item) => (
+                {navigation.map((item) => (                
                   <a
                     key={item.name}
                     onClick={() => handleScrollOrNavigate(item.href)} // no "#" needed
@@ -94,11 +95,11 @@ export default function Example() {
           </div>
         </div>
       </div>
-
+      
       <DisclosurePanel className="sm:hidden">
-        <div className="space-y-1 px-2 pt-2 pb-3">
-          {navigation.map((item) => (
-            <DisclosureButton
+        <div className="space-y-1 px-2 pt-2 pb-3">          
+          {navigation.map((item) => (            
+            <DisclosureButton            
               key={item.name}
               as="a"
               onClick={() => handleScrollOrNavigate(item.href)}
@@ -108,7 +109,7 @@ export default function Example() {
                   ? "text-black hover:bg-violet-600 hover:text-white"
                   : "text-black hover:bg-violet-600 hover:text-white",
                 "block rounded-md px-3 py-2 text-base font-medium"
-              )}
+              )}              
             >
               {item.name}
             </DisclosureButton>

@@ -6,7 +6,7 @@ import {
   Projectcard,
   ContactForm,
 } from "../components/index";
-import { WeatherImage, ColdplateImage, Whatamovie } from "../assets/asset";
+import { WeatherImage, ColdplateImage, Whatamovie, Shooter } from "../assets/asset";
 
 function Home() {
   useEffect(() => {
@@ -148,6 +148,13 @@ function Home() {
               title="WhatAMovie"
               description="A movie searching website using Omdb api"
               link={"/whatamovie-study"}
+            />
+
+            <Projectcard
+              image={Shooter}
+              title="Shooter Game"
+              description="A web based shooter game, made with React and TSX."
+              link={"/shooter-study"}
             />
           </div>
         </section>

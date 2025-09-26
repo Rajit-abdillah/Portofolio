@@ -97,7 +97,7 @@ function Home() {
                   <Skill name="CSS" />
                   <Skill name="JavaScript" />
                   <Skill name="TypeScript" />
-                  <Skill name="JSX" />
+                  <Skill name="JSX/TSX" />
                   <Skill name="React" />
                   <Skill name="Tailwind" />
                   <Skill name="Bootstrap" />

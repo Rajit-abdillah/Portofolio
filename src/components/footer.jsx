@@ -1,4 +1,5 @@
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="bg-gray-800 text-white py-10 p-4">
       <div className="container md:w-1/2 mx-auto flex justify-between">
@@ -36,7 +37,7 @@ export default function Footer() {
       </div>
       <hr className="border-t border-gray-700 mt-8" />
       <div className="container mx-auto text-center mt-8">
-        <p>&copy; 2025 Rajit Abdillah. All rights reserved</p>
+        <p>&copy; <span {...currentYear}></span> Rajit Abdillah. All rights reserved</p>
       </div>
     </footer>
   );
